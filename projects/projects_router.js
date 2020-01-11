@@ -6,6 +6,9 @@ const router = express.Router()
 router.get('/', async (req, res, next) => {
     try {
         const projects = await projectsModel.find()
+        projects.forEach(project => {
+            project.completed === 0 ? project.completed = false : project.completed = true
+        })
         res.json(projects)
     } catch (err) {
         next(err)

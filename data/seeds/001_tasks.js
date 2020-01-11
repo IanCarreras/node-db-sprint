@@ -7,15 +7,18 @@ exports.seed = function(knex) {
       return knex('tasks').insert([
         {
           id: 1, 
-          description: 'description1'
+          description: 'description1',
+          project: 'project1'
         },
         {
           id: 2, 
-          description: 'description2'
+          description: 'description2',
+          project: 'project1'
         },
         {
           id: 3, 
-          description: 'description3'
+          description: 'description3',
+          project: 'project1'
         }
       ]);
     });

@@ -1,12 +1,15 @@
 const express = require("express")
 const tasksModel = require("./tasks_model")
-const db = require("../utils/db")
 
 const router = express.Router()
 
 router.get('/', async (req, res, next) => {
     try {
-        res.json(await tasksModel.find())
+        const tasks = await tasksModel.find()
+        tasks.forEach(task => {
+            task.completed === 0 ? task.completed = false : task.completed = true
+        })
+        res.json(tasks)
     } catch (err) {
         next(err)
     }

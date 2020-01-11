@@ -1,6 +1,5 @@
 const express = require("express")
 const resourcesModel = require("./resources_model")
-const db = require("../utils/db")
 
 const router = express.Router()
 
