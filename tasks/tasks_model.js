@@ -1,7 +1,7 @@
 const db = require('../utils/db')
 
-function find() {
-    return db('tasks').select()
+function find(id) {
+    return db('tasks').select().where({ project_id: id})
 }
 
 async function add(data) {

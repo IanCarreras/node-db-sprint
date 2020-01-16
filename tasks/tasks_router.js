@@ -1,15 +1,23 @@
 const express = require("express")
 const tasksModel = require("./tasks_model")
+const projectsModel = require('../projects/projects_model')
 
 const router = express.Router()
 
-router.get('/', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     try {
-        const tasks = await tasksModel.find()
+        const tasks = await tasksModel.find(req.params.id)
+        const project = await projectsModel.findById(req.params.id)
+
         tasks.forEach(task => {
             task.completed === 0 ? task.completed = false : task.completed = true
         })
-        res.json(tasks)
+        const projectTasks = {
+            project_name: project[0].project_name,
+            project_description: project[0].description,
+            tasks
+        }
+        res.json(projectTasks)
     } catch (err) {
         next(err)
     }
