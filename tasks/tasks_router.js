@@ -15,8 +15,11 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-router.post('/:id', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
     try {
+        if (!req.body.project_id) {
+            res.status(400).json({ message: 'must provide a project id'})
+        }
         const newTask = await tasksModel.add(req.body)
         res.status(201).json(newTask)
     } catch (err) {

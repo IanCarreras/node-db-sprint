@@ -8,17 +8,17 @@ exports.seed = function(knex) {
         {
           id: 1, 
           description: 'description1',
-          project: 'project1'
+          project_id: 1
         },
         {
           id: 2, 
           description: 'description2',
-          project: 'project1'
+          project_id: 1
         },
         {
           id: 3, 
           description: 'description3',
-          project: 'project1'
+          project_id: 1
         }
       ]);
     });
