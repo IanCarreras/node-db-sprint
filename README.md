@@ -40,11 +40,20 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+Relational databases contain data in tables, rows and columns and the relation between data is maintained by key fields between those tables.
+Non-relational databases contain data in pages. There is no definition to the page and no relationships between pages.
+
 - [ ] Why do tables need a `primary key`?
+
+It is a unique identifier for each entry
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+Foreign key
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+A joining/bridging table
 
 ## Minimum Viable Product
 
